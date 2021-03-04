@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Assignment 16 (18812)</title>
+</head>
+<body>
+    <header>
+        <h1 class="container text-center text-black-50 rounded" id="heading">Assignment 15</h1>
+    </header>
+    <main class="container my-5 text-black-50">
+<!-- Start of Section # 01 -->
+        <section class="content">
+            <h2 class="text-center">Javascript Practice 02</h2>
+            <hr>
+<!-- Start of Row # 01 -->
+            <div class="row my-3">
+
+<!-- Function # 01 - Check whether a character is uppercase or lowercase alphabet -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Check Alphabet is Uppercase or Lowercase</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="caseCheckAlphabet" maxlength="1" class="form-control" placeholder="Enter any single alphabet">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="checkUpperLower()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert01"></p>
+                </div>
+
+<!-- Function # 02 - Convert week number to week day -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Week Number to Week Day</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="weekNumber" class="form-control" maxlength="1" placeholder="Enter a week number (0-6)">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="checkWeekDay()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert02"></p>
+                </div>
+
+<!-- Function # 03 - Month number to number of days in that month -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Month Number to Number of Days</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="monthNumber" class="form-control" maxlength="2" placeholder="Enter a month number (1-12)">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="monthToDays()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert03"></p>
+                </div>
+            </div>
+            <hr>
+<!-- End of Row # 01 -->
+<!-- Start of Row # 02 -->
+            <div class="row my-3">
+
+<!-- Function # 04 - Count number of notes in given amount -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Give Amount to Number of Notes</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="givenAmount" class="form-control" placeholder="Enter the amount">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="amountToNotes()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert04"></p>
+                </div>
+
+<!-- Function # 05 - Input angles and check whether a triangle is valid or not -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Check triangle is valid or not by Angles</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="angleCheck01" class="form-control" placeholder="Enter first angle">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="angleCheck02" class="form-control" placeholder="Enter second angle">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="angleCheck03" class="form-control" placeholder="Enter third angle">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="angleCheck()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert05"></p>
+                </div>
+
+<!-- Function # 06 - Input sides and check whether a triangle is valid or not -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Check triangle is valid or not by Sides</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="sideCheck01" class="form-control" placeholder="Enter first side">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="sideCheck02" class="form-control" placeholder="Enter second side">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="sideCheck03" class="form-control" placeholder="Enter third side">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="sideCheck()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert06"></p>
+                </div>
+            </div>
+            <hr>
+<!-- End of Row # 02 -->
+<!-- Start of Row # 03 -->
+            <div class="row my-3">
+
+<!-- Function # 07 - Input sides or angles and check whether a triangle is equilateral, isosceles, or scalene -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Check triangle is equilateral, isosceles, or scalene</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="sideCheck1" class="form-control" placeholder="Enter first side">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="sideCheck2" class="form-control" placeholder="Enter second side">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="sideCheck3" class="form-control" placeholder="Enter third side">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="triangleTypeCheck()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert07"></p>
+                </div>
+
+<!-- Function # 08 - Find all roots of a quadratic equation -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">All roots of quadratic equation</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="aValue" class="form-control" placeholder="Enter first value (a)">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="bValue" class="form-control" placeholder="Enter second value (b)">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="cValue" class="form-control" placeholder="Enter third value (c)">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="quadraticRoots()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert08"></p>
+                </div>
+
+<!-- Function # 09 - Calculate profit or loss -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Calculate Profit or Loss</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="pCost" class="form-control" placeholder="Enter purchase cost per item">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="pItems" class="form-control" placeholder="Enter total number of items">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" id="sPrice" class="form-control" placeholder="Enter sell price per price">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="calculateProfit()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert09"></p>
+                </div>
+            </div>
+            <hr>
+<!-- End of Row # 03 -->
+<!-- Start of Row # 04 -->
+            <div class="row my-3">
+
+<!-- Function # 10 - Search all occurances of a character in given string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Occurance of Character in String</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="occuString" class="form-control" placeholder="Enter the string">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="occuCharacter" maxlength="1" class="form-control" placeholder="Enter a character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="occuranceCheck()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert10"></p>
+                </div>
+
+<!-- Function # 11 - Count occurances of a character in given string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Count Occurance of Character in String</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="occuCount" class="form-control" placeholder="Enter the string">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="charCount" maxlength="1" class="form-control" placeholder="Enter a character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="occuranceCount()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert11"></p>
+                </div>
+
+<!-- Function # 12 - Find highest frequency character in string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Highest Frequency Character in String</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="highFrequency" class="form-control" placeholder="Enter a string">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="highestFrequency()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert12"></p>
+                </div>
+            </div>
+            <hr>
+<!-- End of Row # 04 -->
+<!-- Start of Row # 05 -->
+            <div class="row my-3">
+
+<!-- Function # 13 - Find lowest frequency character in string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Lowest Frequency Character in String</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="loFrequency" class="form-control" placeholder="Enter a string">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="lowFrequency()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert13"></p>
+                </div>
+
+<!-- Function # 14 - Find frequency of each character in string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Frequency of all Characters in String</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="eachFrequency" class="form-control" placeholder="Enter a string">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="allFrequency()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert14"></p>
+                </div>
+
+<!-- Function # 15 - Remove first occurance of a character from string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Remove First Occurance of a Character</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="remString" class="form-control" placeholder="Enter the string">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="remCharacter" maxlength="1" class="form-control" placeholder="Enter a character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="(removeCharacter())" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert15"></p>
+                </div>
+            </div>
+            <hr>
+<!-- End of Row # 05 -->
+<!-- Start of Row # 06 -->
+            <div class="row my-3">
+
+<!-- Function # 16 - Remove last occurance of a character from string -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Remove Last Occurance of a Character</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="remLastString" class="form-control" placeholder="Enter the string">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="remLastCharacter" maxlength="1" class="form-control" placeholder="Enter a character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="(removeLastCharacter())" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert16"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 06 -->
+<!-- Start of Row # 07 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 07 -->
+<!-- Start of Row # 08 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 08 -->
+<!-- Start of Row # 09 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 09 -->
+<!-- Start of Row # 10 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 10 -->
+<!-- Start of Row # 11 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 11 -->
+<!-- Start of Row # 12 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 12 -->
+<!-- Start of Row # 13 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 13 -->
+<!-- Start of Row # 14 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 14 -->
+<!-- Start of Row # 15 -->
+            <div class="row my-3">
+
+<!-- Function # -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+
+
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="text" id="" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert"></p>
+                </div>
+            </div>
+<!-- End of Row # 15 -->
+
+        </section>
+<!-- End of Section # 01 -->
+    </main>
+
+
+
+<!-- Script Files -->
+    <script src="./script.js"></script>
+</body>
+</html>

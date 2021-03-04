@@ -1,0 +1,10 @@
+.segment {
+    background-color: #D3D3D3;
+}
+.none {
+    display: none;
+}
+#heading {
+    background-color: #D3D3D3;
+    padding: 5px 0 15px 0;
+}
