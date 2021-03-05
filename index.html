@@ -312,218 +312,265 @@
                     <p class="none" id="alert16"></p>
                 </div>
 
-
+<!-- Function # 17 - Remove all occurances of a character from string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Remove all Occurance of a Character</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="remAllString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="remAllCharacter" maxlength="1" class="form-control" placeholder="Enter a character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="(removeAllCharacter())" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert17"></p>
                 </div>
 
-
+<!-- Function # 18 - Remove all repeated characters -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Remove all Repeated Characters</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="remRepeatedString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="button" class="btn btn-secondary" onclick="(removeRepeatedCharacter())" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert18"></p>
                 </div>
             </div>
+            <hr>
 <!-- End of Row # 06 -->
 <!-- Start of Row # 07 -->
             <div class="row my-3">
 
-<!-- Function # -->
+<!-- Function # 19 - Replace first occurance of a character with another character -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Replace First Occurance of Character with Another Character</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="repString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="repFirstCharacter" maxlength="1" class="form-control" placeholder="Enter character to be replaced">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="repSecondCharacter" maxlength="1" class="form-control" placeholder="Enter new character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="replaceFirstCharacter()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert19"></p>
                 </div>
 
-
+<!-- Function # 20 - Replace last occurance of a character with another character -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Replace Last Occurance of Character with Another Character</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="repLastString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="repLastFirstCharacter" maxlength="1" class="form-control" placeholder="Enter character to be replaced">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="repLastSecondCharacter" maxlength="1" class="form-control" placeholder="Enter new character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="replaceLastCharacter()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert20"></p>
                 </div>
 
-
+<!-- Function # 21 - Replace all occurances of a character with another in string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Replace All Occurances of Character with Another Character</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="repAllString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="repAllFirstCharacter" maxlength="1" class="form-control" placeholder="Enter character to be replaced">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="repAllSecondCharacter" maxlength="1" class="form-control" placeholder="Enter new character">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="replaceAllCharacter()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert21"></p>
                 </div>
             </div>
+            <hr>
 <!-- End of Row # 07 -->
 <!-- Start of Row # 08 -->
             <div class="row my-3">
 
-<!-- Function # -->
+<!-- Function # 22 - Find first occurance of a word in string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">First Occurance of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="singleOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="singleOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="singleWordOccurance()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert22"></p>
                 </div>
 
-
+<!-- Function # 23 - Find last occurance of a word in string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Last Occurance of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="lastOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="lastOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="lastWordOccurance()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert23"></p>
                 </div>
 
-
+<!-- Function # 24 - Search all occurances of a word in string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">All Occurances of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="allOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="allOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="allWordOccurance()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert24"></p>
                 </div>
             </div>
+            <hr>
 <!-- End of Row # 08 -->
 <!-- Start of Row # 09 -->
             <div class="row my-3">
 
-<!-- Function # -->
+<!-- Function # 25 - Count occurances of a word in string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Count Occurances of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="countOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="countOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="countWordOccurance()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert25"></p>
                 </div>
 
-
+<!-- Function # 26 - Remove first occurance of a word in a string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Remove First Occurance of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="remFirstOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="remFirstOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="removeFirstWord()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert26"></p>
                 </div>
 
-
+<!-- Function # 27 - Remove last occurance of a word in a string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Remove Last Occurance of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="remLastOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="remLastOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="removeLastWord()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert27"></p>
                 </div>
             </div>
+            <hr>
 <!-- End of Row # 09 -->
 <!-- Start of Row # 10 -->
             <div class="row my-3">
 
-<!-- Function # -->
+<!-- Function # 28 - Remove all occurances of a word in a string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Remove All Occurance of a Word in String</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="remAllOccuString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="text" id="remAllOccuWord" class="form-control" placeholder="Enter a word">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="removeAllWord()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert28"></p>
                 </div>
 
-
+<!-- Function # 29 - trim leading white space characters from given string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Trim Leading White Space Characters</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="trimLeadingString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="button" class="btn btn-secondary" onclick="trimLeadingCharacters()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert29"></p>
                 </div>
 
-
+<!-- Function # 30 - trim trailing white space characters from given string -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Trim Trailing White Space Characters</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" id="" class="form-control" placeholder="">
+                            <input type="text" id="trimTrailingString" class="form-control" placeholder="Enter the string">
                         </div>
                         <div class="form-group">
-                            <input type="button" class="btn btn-secondary" onclick="" value="Check Result">
+                            <input type="button" class="btn btn-secondary" onclick="trimTrailingCharacters()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert"></p>
+                    <p class="none" id="alert30"></p>
                 </div>
             </div>
+            <hr>
 <!-- End of Row # 10 -->
 <!-- Start of Row # 11 -->
             <div class="row my-3">

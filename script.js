@@ -467,7 +467,7 @@ function occuranceCount() {
             occurance = '<strong>"' + character + '"</strong> has no occurance';
         }
         else {
-            occurance = '<strong>"' + character + '"</strong> has occured <strong>' + occurance + '</strong> times';
+            occurance = '<strong>"' + character + '"</strong> has occured <strong>"' + occurance + '"</strong> times';
         }
         newSegment = 'String: <strong>"' + string + '"</strong><br> Character: <strong>"' + character + 
         '"</strong><br>' + occurance;
@@ -660,5 +660,466 @@ function removeLastCharacter() {
         
         document.getElementById('alert16').innerHTML = newSegment;
         document.getElementById('alert16').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 17 - Remove all occurances of a character from string
+function removeAllCharacter() {
+    var string = document.getElementById('remAllString').value;
+    var originalString = document.getElementById('remAllString').value;
+    var character = document.getElementById('remAllCharacter').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter both string and character!</strong>';
+    if (string=='' || character=='') {
+        document.getElementById('alert17').innerHTML = newSegment;
+        document.getElementById('alert17').className = 'alert alert-danger text-center';
+    }
+    else {
+        while (string.match(character)) {
+            occurance = string.toLowerCase().indexOf(character.toLowerCase());
+            if (occurance == -1) {
+                newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Character: <strong>"' + 
+                character + '"</strong><br><strong> Character Not Found!</strong>';
+            } 
+            else {
+                string = string.slice(0, occurance) + string.slice(occurance+1, occurance.length);
+                newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Character: <strong>"' + 
+                character + '"</strong><br> New String: <strong>"' + string + '"</strong>';
+            }
+        }
+
+        
+        document.getElementById('alert17').innerHTML = newSegment;
+        document.getElementById('alert17').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 18 - Remove all repeated characters
+function removeRepeatedCharacter() {
+    var string = document.getElementById('remRepeatedString').value;
+    var originalString = document.getElementById('remRepeatedString').value;
+    
+    var newSegment = '<strong>Please enter a string!</strong>';
+    if (string=='') {
+        document.getElementById('alert18').innerHTML = newSegment;
+        document.getElementById('alert18').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length-1; i++) {
+            if (!string[i].match(/[a-zA-Z0-9]/g) && !string[i+1].match(/[a-zA-Z0-9]/g)) {
+                while (string[i] == string[i+1]) {
+                    string = string.slice(0, i) + string.slice(i+1, string.length);
+                }
+            }
+            else {
+                while (string[i].toLowerCase() == string[i+1].toLowerCase()) {
+                    string = string.slice(0, i) + string.slice(i+1, string.length);
+                } 
+            }  
+        }
+
+        if (string.length < originalString.length) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> New String: <strong>"' + 
+            string + '"</strong>';
+        } 
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br><strong>Duplicate Character Not Found!</strong>';
+        }
+        
+        document.getElementById('alert18').innerHTML = newSegment;
+        document.getElementById('alert18').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 19 - Replace first occurance of a character with another character
+function replaceFirstCharacter() {
+    var string = document.getElementById('repString').value;
+    var originalString = document.getElementById('repString').value;
+    var character = document.getElementById('repFirstCharacter').value;
+    var character2 = document.getElementById('repSecondCharacter').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter the string and both characters!</strong>';
+    if (string=='' || character=='' || character2=='') {
+        document.getElementById('alert19').innerHTML = newSegment;
+        document.getElementById('alert19').className = 'alert alert-danger text-center';
+    }
+    else {
+        occurance = string.toLowerCase().indexOf(character.toLowerCase());
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Character: <strong>"' + 
+            character + '"</strong><br>Second Character: <strong>"' + character2 + 
+            '"</strong><br><strong> Character Not Found!</strong>';
+        } 
+        else {
+            string = string.slice(0, occurance) + character2 + string.slice(occurance+1, occurance.length);
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br>First Character: <strong>"' + 
+            character + '"</strong><br>Second Character: <strong>"' + character2 + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        
+        document.getElementById('alert19').innerHTML = newSegment;
+        document.getElementById('alert19').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 20 - Replace last occurance of a character with another character
+function replaceLastCharacter() {
+    var string = document.getElementById('repLastString').value;
+    var originalString = document.getElementById('repLastString').value;
+    var character = document.getElementById('repLastFirstCharacter').value;
+    var character2 = document.getElementById('repLastSecondCharacter').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter the string and both characters!</strong>';
+    if (string=='' || character=='' || character2=='') {
+        document.getElementById('alert20').innerHTML = newSegment;
+        document.getElementById('alert20').className = 'alert alert-danger text-center';
+    }
+    else {
+        occurance = string.toLowerCase().lastIndexOf(character.toLowerCase());
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Character: <strong>"' + 
+            character + '"</strong><br>Second Character: <strong>"' + character2 + 
+            '"</strong><br><strong> Character Not Found!</strong>';
+        } 
+        else {
+            string = string.slice(0, occurance) + character2 + string.slice(occurance+1, occurance.length);
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br>First Character: <strong>"' + 
+            character + '"</strong><br>Second Character: <strong>"' + character2 + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        
+        document.getElementById('alert20').innerHTML = newSegment;
+        document.getElementById('alert20').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 21 - Replace all occurances of a character with another in string
+function replaceAllCharacter() {
+    var string = document.getElementById('repAllString').value;
+    var originalString = document.getElementById('repAllString').value;
+    var character = document.getElementById('repAllFirstCharacter').value;
+    var character2 = document.getElementById('repAllSecondCharacter').value;
+    var occurance = [];
+    
+    var newSegment = '<strong>Please enter both string and character!</strong>';
+    if (string=='' || character=='') {
+        document.getElementById('alert21').innerHTML = newSegment;
+        document.getElementById('alert21').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string[i].toLowerCase() == character) {
+                string = string.slice(0, i) + character2 + string.slice(i+1, string.length);
+            }
+        }
+        occurance = originalString.toLowerCase().indexOf(character.toLowerCase());
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Character: <strong>"' + 
+            character + '"</strong><br>Second Character: <strong>"' + character2 + 
+            '"</strong><br><strong> Character Not Found!</strong>';
+        } 
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br>First Character: <strong>"' + 
+            character + '"</strong><br>Second Character: <strong>"' + character2 + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        
+        document.getElementById('alert21').innerHTML = newSegment;
+        document.getElementById('alert21').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 22 - Find first occurance of a word in string
+function singleWordOccurance() {
+    var string = document.getElementById('singleOccuString').value;
+    var word = document.getElementById('singleOccuWord').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert22').innerHTML = newSegment;
+        document.getElementById('alert22').className = 'alert alert-danger text-center';
+    }
+    else {
+        occurance = string.toLowerCase().indexOf(word.toLowerCase());
+
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + string + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br><strong> Word Not Found!</strong>';
+        } 
+        else {
+            newSegment = 'String: <strong>"' + string + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br> Occurance: <strong>"' + occurance + '"</strong>';
+        }
+
+        
+        document.getElementById('alert22').innerHTML = newSegment;
+        document.getElementById('alert22').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 23 - Find last occurance of a word in string
+function lastWordOccurance() {
+    var string = document.getElementById('lastOccuString').value;
+    var word = document.getElementById('lastOccuWord').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert23').innerHTML = newSegment;
+        document.getElementById('alert23').className = 'alert alert-danger text-center';
+    }
+    else {
+        occurance = string.toLowerCase().lastIndexOf(word.toLowerCase());
+
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + string + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br><strong> Word Not Found!</strong>';
+        } 
+        else {
+            newSegment = 'String: <strong>"' + string + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br> Occurance: <strong>"' + occurance + '"</strong>';
+        }
+
+        
+        document.getElementById('alert23').innerHTML = newSegment;
+        document.getElementById('alert23').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 24 - Search all occurances of a word in string
+function allWordOccurance() {
+    var string = document.getElementById('allOccuString').value;
+    var word = document.getElementById('allOccuWord').value;
+    var occurance = '';
+    var newSegment = '<strong>Please Enter both String and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert24').innerHTML = newSegment;
+        document.getElementById('alert24').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+word.length).toLowerCase() == word.toLowerCase()) {
+                occurance = occurance + i + ', ';
+            }
+            
+        }
+        if (occurance == '') {
+            occurance = 'Not Found';
+        }
+        else {
+            occurance = occurance.slice(0, occurance.length-2);
+        }
+        newSegment = 'String: <strong>"' + string + '"</strong><br> Word: <strong>"' + word + 
+        '"</strong><br> Occurance: <strong>"' + occurance + '"</strong>';
+        document.getElementById('alert24').innerHTML = newSegment;
+        document.getElementById('alert24').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 25 - Count occurances of a word in string
+function countWordOccurance() {
+    var string = document.getElementById('countOccuString').value;
+    var word = document.getElementById('countOccuWord').value;
+    var occurance = 0;
+    var newSegment = '<strong>Please Enter both String and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert25').innerHTML = newSegment;
+        document.getElementById('alert25').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+word.length).toLowerCase() == word.toLowerCase()) {
+                occurance = occurance + 1;
+            }
+            
+        }
+        if (occurance == 0) {
+            occurance = '<strong>"' + word + '"</strong> has no occurance';
+        }
+        else {
+            occurance = '<strong>"' + word + '"</strong> has occured <strong>"' + occurance + '"</strong> times';
+        }
+        newSegment = 'String: <strong>"' + string + '"</strong><br> Word: <strong>"' + word + 
+        '"</strong><br>' + occurance;
+        document.getElementById('alert25').innerHTML = newSegment;
+        document.getElementById('alert25').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 26 - Remove first occurance of a word in a string
+function removeFirstWord() {
+    var string = document.getElementById('remFirstOccuString').value;
+    var originalString = document.getElementById('remFirstOccuString').value;
+    var word = document.getElementById('remFirstOccuWord').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert26').innerHTML = newSegment;
+        document.getElementById('alert26').className = 'alert alert-danger text-center';
+    }
+    else {
+        occurance = string.toLowerCase().indexOf(word.toLowerCase());
+
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br><strong> Word Not Found!</strong>';
+        } 
+        else {
+            string = string.slice(0, occurance) + string.slice(occurance+word.length, occurance.length);
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        
+        document.getElementById('alert26').innerHTML = newSegment;
+        document.getElementById('alert26').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 26 - Remove last occurance of a word in a string
+function removeLastWord() {
+    var string = document.getElementById('remLastOccuString').value;
+    var originalString = document.getElementById('remLastOccuString').value;
+    var word = document.getElementById('remLastOccuWord').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert27').innerHTML = newSegment;
+        document.getElementById('alert27').className = 'alert alert-danger text-center';
+    }
+    else {
+        occurance = string.toLowerCase().lastIndexOf(word.toLowerCase());
+
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br><strong> Word Not Found!</strong>';
+        } 
+        else {
+            string = string.slice(0, occurance) + string.slice(occurance+word.length, occurance.length);
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        
+        document.getElementById('alert27').innerHTML = newSegment;
+        document.getElementById('alert27').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 28 - Remove all occurances of a word in a string
+function removeAllWord() {
+    var string = document.getElementById('remAllOccuString').value;
+    var originalString = document.getElementById('remAllOccuString').value;
+    var word = document.getElementById('remAllOccuWord').value;
+    var occurance;
+    
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='' || word=='' || word.match(/[\s]/g)) {
+        document.getElementById('alert28').innerHTML = newSegment;
+        document.getElementById('alert28').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+word.length).toLowerCase() == word.toLowerCase()) {
+                string = string.slice(0, i) + string.slice(i+word.length, string.length);
+            }
+            
+        }
+
+        occurance = originalString.toLowerCase().lastIndexOf(word.toLowerCase());
+        if (occurance == -1) {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br><strong> Word Not Found!</strong>';
+        } 
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + '"</strong><br> Word: <strong>"' + 
+            word + '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        
+        document.getElementById('alert28').innerHTML = newSegment;
+        document.getElementById('alert28').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 29 - trim leading white space characters from given string
+function trimLeadingCharacters(params) {
+    var string = document.getElementById('trimLeadingString').value;
+    var originalString = document.getElementById('trimLeadingString').value;
+    var whiteSpace = /\s/g;
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='') {
+        document.getElementById('alert29').innerHTML = newSegment;
+        document.getElementById('alert29').className = 'alert alert-danger text-center';
+    }
+    else {
+        while (string[0].match(whiteSpace)) {
+            string = string.slice(1, string.length);
+        }
+
+        if (!originalString[0].match(whiteSpace)) {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br><strong>"Leading White Spaces Not Found!"</strong>';
+        }
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        document.getElementById('alert29').innerHTML = newSegment;
+        document.getElementById('alert29').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 30 - trim trailing white space characters from given string
+function trimTrailingCharacters(params) {
+    var string = document.getElementById('trimTrailingString').value;
+    var originalString = document.getElementById('trimTrailingString').value;
+    var whiteSpace = /\s/g;
+    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    if (string=='') {
+        document.getElementById('alert30').innerHTML = newSegment;
+        document.getElementById('alert30').className = 'alert alert-danger text-center';
+    }
+    else {
+        while (string[string.length-1].match(whiteSpace)) {
+            string = string.slice(0, string.length-1);
+        }
+
+        if (!originalString[originalString.length-1].match(whiteSpace)) {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br><strong>"Trailing White Spaces Not Found!"</strong>';
+        }
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        document.getElementById('alert30').innerHTML = newSegment;
+        document.getElementById('alert30').className = 'alert alert-success text-center';
     }
 }
