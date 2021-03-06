@@ -1070,7 +1070,7 @@ function trimLeadingCharacters(params) {
     var string = document.getElementById('trimLeadingString').value;
     var originalString = document.getElementById('trimLeadingString').value;
     var whiteSpace = /\s/g;
-    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    var newSegment = '<strong>Please enter the string!</strong>';
     if (string=='') {
         document.getElementById('alert29').innerHTML = newSegment;
         document.getElementById('alert29').className = 'alert alert-danger text-center';
@@ -1082,7 +1082,7 @@ function trimLeadingCharacters(params) {
 
         if (!originalString[0].match(whiteSpace)) {
             newSegment = 'Original String: <strong>"' + originalString + 
-            '"</strong><br><strong>"Leading White Spaces Not Found!"</strong>';
+            '"</strong><br><strong>"Leading White Space Characters Not Found!"</strong>';
         }
         else {
             newSegment = 'Original String: <strong>"' + originalString + 
@@ -1100,7 +1100,7 @@ function trimTrailingCharacters(params) {
     var string = document.getElementById('trimTrailingString').value;
     var originalString = document.getElementById('trimTrailingString').value;
     var whiteSpace = /\s/g;
-    var newSegment = '<strong>Please enter both string and single word!</strong>';
+    var newSegment = '<strong>Please enter the string!</strong>';
     if (string=='') {
         document.getElementById('alert30').innerHTML = newSegment;
         document.getElementById('alert30').className = 'alert alert-danger text-center';
@@ -1112,7 +1112,7 @@ function trimTrailingCharacters(params) {
 
         if (!originalString[originalString.length-1].match(whiteSpace)) {
             newSegment = 'Original String: <strong>"' + originalString + 
-            '"</strong><br><strong>"Trailing White Spaces Not Found!"</strong>';
+            '"</strong><br><strong>"Trailing White Space Characters Not Found!"</strong>';
         }
         else {
             newSegment = 'Original String: <strong>"' + originalString + 
@@ -1121,5 +1121,428 @@ function trimTrailingCharacters(params) {
 
         document.getElementById('alert30').innerHTML = newSegment;
         document.getElementById('alert30').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 31 - trim both leading and trailing white space characters from given string
+function trimWhiteSpaceCharacters() {
+    var string = document.getElementById('trimWhiteSpace').value;
+    var originalString = document.getElementById('trimWhiteSpace').value;
+    var whiteSpace = /\s/g;
+    var newSegment = '<strong>Please enter the string!</strong>';
+    if (string=='') {
+        document.getElementById('alert31').innerHTML = newSegment;
+        document.getElementById('alert31').className = 'alert alert-danger text-center';
+    }
+    else {
+        while (string[0].match(whiteSpace) || string[string.length-1].match(whiteSpace)) {
+            if (string[0].match(whiteSpace)) {
+                string = string.slice(1, string.length);
+            } else {
+                string = string.slice(0, string.length-1);
+            }   
+        }
+
+        if (!originalString[0].match(whiteSpace) && !originalString[originalString.length-1].match(whiteSpace)) {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br><strong>"Leading or Trailing White Space Characters Not Found!"</strong>';
+        }
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        document.getElementById('alert31').innerHTML = newSegment;
+        document.getElementById('alert31').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 32 - Remove all extra blank spaces from given string
+function removeBlankSpaces() {
+    var string = document.getElementById('remBlankSpaces').value;
+    var originalString = document.getElementById('remBlankSpaces').value;
+    var newSegment = '<strong>Please enter the string!</strong>';
+    var counter = 0;
+    if (string=='') {
+        document.getElementById('alert32').innerHTML = newSegment;
+        document.getElementById('alert32').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            while (string.slice(i, i+2) == '  ') {
+                string = string.slice(0, i) + string.slice(i+1, string.length);
+                counter = counter + 1;
+            }
+        }
+        
+        if (counter == 0) {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br><strong>"Extra Blank Spaces Not Found!"</strong>';
+        }
+        else {
+            newSegment = 'Original String: <strong>"' + originalString + 
+            '"</strong><br> New String: <strong>"' + string + '"</strong>';
+        }
+
+        document.getElementById('alert32').innerHTML = newSegment;
+        document.getElementById('alert32').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 33 - Frequency of each element in the array
+function countElementArray() {
+    var string = document.getElementById('couElementArray').value;
+    var array = [];
+    var word = ''
+    var characterString = [];
+    var occurance = [];
+    var index;
+    var statement = '';
+    var newSegment = '<strong>Please Enter the array separated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert33').innerHTML = newSegment;
+        document.getElementById('alert33').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+        }
+        for (var i=0; i<array.length; i++) {
+            if (characterString.includes(array[i].toLowerCase())) {
+                index = characterString.indexOf(array[i].toLowerCase());
+                occurance[index] = occurance[index] + 1;
+            }
+            else {
+                characterString.push(array[i].toLowerCase());
+                occurance.push(1);
+            }
+        }
+        for (var y=0; y<occurance.length; y++) {
+            statement = statement + '<br><strong>"' + characterString[y] + '"</strong> : <strong>"' + 
+            occurance[y] + '"</strong>';
+        }
+
+
+        newSegment = 'Array: <strong>[' + array + ']</strong><br> Character : Frequency' + statement;
+        document.getElementById('alert33').innerHTML = newSegment;
+        document.getElementById('alert33').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function 34 - Print all unique elements in the array
+function printUniqueElements() {
+    var string = document.getElementById('priUniqueElements').value;
+    var array = [];
+    var word = ''
+    var characterString = [];
+    var occurance = [];
+    var index;
+    var statement = '';
+    var newSegment = '<strong>Please Enter the array separated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert34').innerHTML = newSegment;
+        document.getElementById('alert34').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+        }
+        for (var i=0; i<array.length; i++) {
+            if (characterString.includes(array[i].toLowerCase())) {
+                index = characterString.indexOf(array[i].toLowerCase());
+                occurance[index] = occurance[index] + 1;
+            }
+            else {
+                characterString.push(array[i].toLowerCase());
+                occurance.push(1);
+            }
+        }
+        for (var y=0; y<occurance.length; y++) {
+            if (occurance[y] == 1) {
+                statement = statement + '<br><strong>"' + characterString[y] + '"</strong> : <strong>"' + 
+                occurance[y] + '"</strong>';
+            }
+        }
+
+
+        newSegment = 'Array: <strong>[' + array + ']</strong><br> Character : Frequency' + statement;
+        document.getElementById('alert34').innerHTML = newSegment;
+        document.getElementById('alert34').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 35 - Count total number of duplicate elements in the array
+function countDuplicateElements() {
+    var string = document.getElementById('couDuplicateElements').value;
+    var array = [];
+    var word = ''
+    var characterString = [];
+    var occurance = [];
+    var index;
+    var statement = '';
+    var counter = 0;
+    var newSegment = '<strong>Please Enter the array separated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert35').innerHTML = newSegment;
+        document.getElementById('alert35').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+        }
+        for (var i=0; i<array.length; i++) {
+            if (characterString.includes(array[i].toLowerCase())) {
+                index = characterString.indexOf(array[i].toLowerCase());
+                occurance[index] = occurance[index] + 1;
+            }
+            else {
+                characterString.push(array[i].toLowerCase());
+                occurance.push(1);
+            }
+        }
+        for (var y=0; y<occurance.length; y++) {
+            if (occurance[y] > 1) {
+                statement = statement + '<br><strong>"' + characterString[y] + '"</strong> : <strong>"' + 
+                occurance[y] + '"</strong>';
+                counter += 1;
+            }
+        }
+
+
+        newSegment = 'Array: <strong>[' + array + ']</strong><br> Character : Frequency' + statement + 
+        '<br>There are <strong>"' + counter + '"</strong> duplicate elements in this array';
+        document.getElementById('alert35').innerHTML = newSegment;
+        document.getElementById('alert35').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 36 - Delete all duplicate elements from the array
+function deleteDuplicateElements() {
+    var string = document.getElementById('delDuplicateElements').value;
+    var array = [];
+    var oldArray = [];
+    var word = '';
+    var characterString = [];
+    var occurance = [];
+    var index;
+    var counter = 0;
+    var newSegment = '<strong>Please Enter the array separated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert36').innerHTML = newSegment;
+        document.getElementById('alert36').className = 'alert alert-danger text-center';
+    }
+    else {
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                oldArray.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            oldArray.push(word);
+        }
+        for (var i=0; i<array.length; i++) {
+            if (characterString.includes(array[i].toLowerCase())) {
+                index = characterString.indexOf(array[i].toLowerCase());
+                occurance[index] = occurance[index] + 1;
+            }
+            else {
+                characterString.push(array[i].toLowerCase());
+                occurance.push(1);
+            }
+        }
+        for (var y=0; y<occurance.length; y++) {
+            if (occurance[y] > 1) {
+                for (z=0; z<array.length; z++) {
+                    if (array[z] == characterString[y]) {
+                        array.splice(z,1);
+                    }
+                }
+                counter += 1;
+            }
+        }
+
+        newSegment = 'Old Array: <strong>[' + oldArray + ']</strong><br> New Array: <strong>[' + array + 
+        ']</strong><br>There were <strong>"' + counter + '"</strong> duplicate elements in this array';
+        document.getElementById('alert36').innerHTML = newSegment;
+        document.getElementById('alert36').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 37 - Merge two array to third array
+function mergeTwoArrays() {
+    var string = document.getElementById('merTwoArrays').value;
+    var string2 = document.getElementById('merTwoArrays2').value;
+    var array = [];
+    var secondArray = [];
+    var thirdArray = []
+    var word = '';
+    var newSegment = '<strong>Please Enter both arrays separated by comma(,)!</strong>';
+    if (string=="" || string2 == "") {
+        document.getElementById('alert37').innerHTML = newSegment;
+        document.getElementById('alert37').className = 'alert alert-danger text-center';
+    }
+    else {
+        // First and Second Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                thirdArray.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            thirdArray.push(word);
+            word = '';
+        }
+        // Second and Third Array
+        for (var j=0; j<string2.length; j++) {
+            if (string2.slice(j, j+1) != ' ' && string2.slice(j, j+1) != ','){
+                word = word + string2.slice(j, j+1);
+            }
+            else if (word != ''){
+                secondArray.push(word);
+                thirdArray.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            secondArray.push(word);
+            thirdArray.push(word);
+            word = '';
+        }
+
+        newSegment = 'First Array: <strong>[' + array + ']</strong><br> Second Array: <strong>[' + secondArray + 
+        ']</strong><br> Third Array: <strong>[' + thirdArray + ']</strong>';
+        document.getElementById('alert37').innerHTML = newSegment;
+        document.getElementById('alert37').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 38 - Find reverse of an array
+function reverseArray() {
+    var string = document.getElementById('revArray').value;
+    var array = [];
+    var reverseArray = [];
+    var word = '';
+    var newSegment = '<strong>Please Enter the array separated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert38').innerHTML = newSegment;
+        document.getElementById('alert38').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            word = '';
+        }
+        // Reverse Array
+        for (var j=0; j<array.length; j++) {
+            reverseArray.unshift(array[j]);
+        }
+        
+
+        newSegment = 'Array: <strong>[' + array + ']</strong><br> Reversed Array: <strong>[' + reverseArray + 
+        ']</strong>';
+        document.getElementById('alert38').innerHTML = newSegment;
+        document.getElementById('alert38').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 39 - Seperate even and odd elements of array in two separate array
+function separateOddEvenElements() {
+    var string = document.getElementById('sepOddEvenElements').value;
+    var array = [];
+    var oddArray = [];
+    var evenArray = [];
+    var word = '';
+    var newSegment = '<strong>Please Enter numerical separated by comma(,)!</strong>';
+    if (string=="" || string.match(/[^-, \D]/g)) {
+        document.getElementById('alert39').innerHTML = newSegment;
+        document.getElementById('alert39').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            word = '';
+        }
+        // Sepration of Odd and Even Elements in two Arrays
+        for (var j=0; j<array.length; j++) {
+            if (array[j]%2 == 0) {
+                evenArray.push(array[j]);
+            } else {
+                oddArray.push(array[j]);
+            }
+        }
+        
+
+        newSegment = 'Array: <strong>[' + array + ']</strong><br> Odd Array: <strong>[' + oddArray + 
+        ']</strong><br> Even Array: <strong>[' + evenArray + ']</strong>';
+        document.getElementById('alert39').innerHTML = newSegment;
+        document.getElementById('alert39').className = 'alert alert-success text-center';
     }
 }
