@@ -811,7 +811,7 @@
                             <input type="number" id="sumNaturalNumbers" class="form-control" placeholder="Enter the number">
                         </div>
                         <div class="form-group">
-                            <input type="button" id="RightRotate" class="btn btn-secondary" onclick="sumOfNaturalNumbers()" value="Check Sum">
+                            <input type="button" class="btn btn-secondary" onclick="sumOfNaturalNumbers()" value="Check Sum">
                         </div>
                     </form>
                     <p class="none" id="alert45"></p>
@@ -830,7 +830,7 @@
                             <input type="number" id="sumEvenNumbers" class="form-control" placeholder="Enter the number">
                         </div>
                         <div class="form-group">
-                            <input type="button" id="RightRotate" class="btn btn-secondary" onclick="sumOfEvenNumbers()" value="Check Sum">
+                            <input type="button" class="btn btn-secondary" onclick="sumOfEvenNumbers()" value="Check Sum">
                         </div>
                     </form>
                     <p class="none" id="alert46"></p>
@@ -844,24 +844,24 @@
                             <input type="number" id="sumOddNumbers" class="form-control" placeholder="Enter the number">
                         </div>
                         <div class="form-group">
-                            <input type="button" id="RightRotate" class="btn btn-secondary" onclick="sumOfOddNumbers()" value="Check Sum">
+                            <input type="button" class="btn btn-secondary" onclick="sumOfOddNumbers()" value="Check Sum">
                         </div>
                     </form>
                     <p class="none" id="alert47"></p>
                 </div>
 
-
+<!-- Function # 48 - Print multiplication table of a number -->
                 <div class="col-sm mx-2 rounded segment">
-                    <h4 class="text-center">Sum of Natural Numbers till Entered Value</h4>
+                    <h4 class="text-center">Multiplication Table of Entered Number</h4>
                     <form action="" onsubmit="return false">
                         <div class="form-group">
-                            <input type="number" id="sumNaturalNumbers" class="form-control" placeholder="Enter the number">
+                            <input type="number" id="mulTable" class="form-control" placeholder="Enter the number">
                         </div>
                         <div class="form-group">
-                            <input type="button" id="RightRotate" class="btn btn-secondary" onclick="sumOfNaturalNumbers()" value="Check Sum">
+                            <input type="button" class="btn btn-secondary" onclick="multiplicationTable()" value="Check Result">
                         </div>
                     </form>
-                    <p class="none" id="alert45"></p>
+                    <p class="none" id="alert48"></p>
                 </div>
             </div>
             <hr>
@@ -869,10 +869,97 @@
 <!-- Start of Row # 17 -->
             <div class="row my-3">
 
-                
+<!-- Function # 49 - Count number of digits in a number -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Count Number of Digits</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="couDigits" class="form-control" placeholder="Enter the number">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="countDigits()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert49"></p>
+                </div>
+
+<!-- Function # 50 - Find first and last digit of a number -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">First and Last Digit</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="firLastDigit" class="form-control" placeholder="Enter the number">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="firstLastDigit()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert50"></p>
+                </div>
+
+<!-- Function # 51 - Find sum of first and last digit of a number -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Sum of First and Last Digit</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="sumFirLastDigit" class="form-control" placeholder="Enter the number">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="sumFirstLastDigit()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert51"></p>
+                </div>
             </div>
             <hr>
 <!-- End of Row # 17 -->
+<!-- Start of Row # 18 -->
+            <div class="row my-3">
+
+<!-- Function # 52 - Swap first and last digits of a number -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Swap First and Last Digit</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="swaFirstLastDigit" class="form-control" placeholder="Enter the number">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="swapFirstLastDigit()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert52"></p>
+                </div>
+
+<!-- Function # 53 - Calculate sum of digits of a number -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Sum of Digits</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="sumDigits" class="form-control" placeholder="Enter the number">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="sumOfDigits()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert53"></p>
+                </div>
+
+<!-- Function # 54 - Calculate product of digits of a number -->
+                <div class="col-sm mx-2 rounded segment">
+                    <h4 class="text-center">Product of Digits</h4>
+                    <form action="" onsubmit="return false">
+                        <div class="form-group">
+                            <input type="number" id="productDigits" class="form-control" placeholder="Enter the number">
+                        </div>
+                        <div class="form-group">
+                            <input type="button" class="btn btn-secondary" onclick="productOfDigits()" value="Check Result">
+                        </div>
+                    </form>
+                    <p class="none" id="alert54"></p>
+                </div>
+            </div>
+            <hr>
+<!-- End of Row # 18 -->
         </section>
 <!-- End of Section # 01 -->
     </main>

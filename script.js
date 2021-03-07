@@ -1858,7 +1858,7 @@ function sumOfNaturalNumbers() {
 function sumOfEvenNumbers() {
     var string = document.getElementById('sumEvenNumbers').value.toString();
     var sum = 0;
-    var newSegment = '<strong>Please Enter a Single Number!</strong>';
+    var newSegment = '<strong>Please Enter a Single Positive Number!</strong>';
     if (string=="" || string.match(/\D/g)) {
         document.getElementById('alert46').innerHTML = newSegment;
         document.getElementById('alert46').className = 'alert alert-danger text-center';
@@ -1868,7 +1868,7 @@ function sumOfEvenNumbers() {
         // Sum Loop
         string = parseInt(string);
         for (var j=0; j<= string; j++) {
-            if (string%2 == 0) {
+            if (j%2 == 0) {
                 sum = sum + j;
             }
         }
@@ -1878,5 +1878,227 @@ function sumOfEvenNumbers() {
         sum + '"</strong>';
         document.getElementById('alert46').innerHTML = newSegment;
         document.getElementById('alert46').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 47 - Sum of all odd numbers between 1 to n
+function sumOfOddNumbers() {
+    var string = document.getElementById('sumOddNumbers').value.toString();
+    var sum = 0;
+    var newSegment = '<strong>Please Enter a Single Positive Number!</strong>';
+    if (string=="" || string.match(/\D/g)) {
+        document.getElementById('alert47').innerHTML = newSegment;
+        document.getElementById('alert47').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Sum Loop
+        string = parseInt(string);
+        for (var j=0; j<= string; j++) {
+            if (j%2 == 1) {
+                sum = sum + j;
+            }
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Sum: <strong>"' +
+        sum + '"</strong>';
+        document.getElementById('alert47').innerHTML = newSegment;
+        document.getElementById('alert47').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 48 - Print multiplication table of a number
+function multiplicationTable() {
+    var string = document.getElementById('mulTable').value.toString();
+    var table = '';
+    var newSegment = '<strong>Please Enter a Single Positive Number!</strong>';
+    if (string=="" || string.match(/\D/g)) {
+        document.getElementById('alert48').innerHTML = newSegment;
+        document.getElementById('alert48').className = 'alert alert-danger text-center';
+    }
+    else {
+        string = parseInt(string);
+        for (var i=1; i<=10; i++) {
+            table = table + string + ' x ' + i + ' = ' + (string*i) + '<br>'
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Tabale: <br><strong>' +
+        table + '</strong>';
+        document.getElementById('alert48').innerHTML = newSegment;
+        document.getElementById('alert48').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 49 - Count number of digits in a number
+function countDigits() {
+    var string = document.getElementById('couDigits').value.toString();
+    var digits = 0;
+    var newSegment = '<strong>Please Enter a Number!</strong>';
+    if (string=="") {
+        document.getElementById('alert49').innerHTML = newSegment;
+        document.getElementById('alert49').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Count Digits
+        for (var i=0; i<string.length; i++) {
+            if (!string[i].match(/\D/g)) {
+                digits += 1;
+            }
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Entered number has <strong>"' +
+        digits + '"</strong>';
+        document.getElementById('alert49').innerHTML = newSegment;
+        document.getElementById('alert49').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 50 - Find first and last digit of a number
+function firstLastDigit() {
+    var string = document.getElementById('firLastDigit').value.toString();
+    var digits = [];
+    var newSegment = '<strong>Please Enter a Number!</strong>';
+    if (string=="") {
+        document.getElementById('alert50').innerHTML = newSegment;
+        document.getElementById('alert50').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Count Digits
+        for (var i=0; i<string.length; i++) {
+            if (!string[i].match(/\D/g)) {
+                digits.push(string[i]);
+            }
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> First Digit: <strong>"' +
+        digits[0] + '"</strong><br> Last Digit: <strong>"' + digits[digits.length-1] + '"</strong>';
+        document.getElementById('alert50').innerHTML = newSegment;
+        document.getElementById('alert50').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 51 - Find sum of first and last digit of a number
+function sumFirstLastDigit() {
+    var string = document.getElementById('sumFirLastDigit').value.toString();
+    var digits = [];
+    var sum = 0;
+    var newSegment = '<strong>Please Enter a Number!</strong>';
+    if (string=="") {
+        document.getElementById('alert51').innerHTML = newSegment;
+        document.getElementById('alert51').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Count Digits
+        for (var i=0; i<string.length; i++) {
+            if (!string[i].match(/\D/g)) {
+                digits.push(parseInt(string[i]));
+            }
+        }
+        sum = digits[0] + digits[digits.length-1];
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> First Digit: <strong>"' +
+        digits[0] + '"</strong><br> Last Digit: <strong>"' + digits[digits.length-1] + 
+        '"</strong><br> Sum: <strong>"' + sum + '"</strong>';
+        document.getElementById('alert51').innerHTML = newSegment;
+        document.getElementById('alert51').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 52 - Swap first and last digits of a number
+function swapFirstLastDigit() {
+    var string = document.getElementById('swaFirstLastDigit').value;
+    var originalString = document.getElementById('swaFirstLastDigit').value;
+    var digits = [];
+    var newSegment = '<strong>Please Enter a Number!</strong>';
+    if (string=="") {
+        document.getElementById('alert52').innerHTML = newSegment;
+        document.getElementById('alert52').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Count Digits
+        for (var i=0; i<string.length; i++) {
+            if (!string[i].match(/\D/g)) {
+                digits.push(parseInt(string[i]));
+            }
+        }
+        // Swap First and Last Digit
+        string = string.slice(0, string.indexOf(digits[0])) + digits[digits.length-1] + 
+        string.slice(string.indexOf(digits[0]+1), string.length-1) + digits[0];
+
+
+        newSegment = 'Entered Number: <strong>"' + originalString + '"</strong><br> First Digit: <strong>"' +
+        digits[0] + '"</strong><br> Last Digit: <strong>"' + digits[digits.length-1] + 
+        '"</strong><br> Swaped Number: <strong>"' + string + '"</strong>';
+        document.getElementById('alert52').innerHTML = newSegment;
+        document.getElementById('alert52').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 53 - Calculate sum of digits of a number
+function sumOfDigits() {
+    var string = document.getElementById('sumDigits').value;
+    var digits = [];
+    var sum = 0;
+    var newSegment = '<strong>Please Enter a Number!</strong>';
+    if (string=="") {
+        document.getElementById('alert53').innerHTML = newSegment;
+        document.getElementById('alert53').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Count Digits
+        for (var i=0; i<string.length; i++) {
+            if (!string[i].match(/\D/g)) {
+                digits.push(parseInt(string[i]));
+                sum = sum + parseInt(string[i]);
+            }
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Sum: <strong>"' +
+        sum + '"</strong>';
+        document.getElementById('alert53').innerHTML = newSegment;
+        document.getElementById('alert53').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 54 - Calculate product of digits of a number
+function productOfDigits() {
+    var string = document.getElementById('productDigits').value;
+    var digits = [];
+    var product = 1;
+    var newSegment = '<strong>Please Enter a Number!</strong>';
+    if (string=="") {
+        document.getElementById('alert54').innerHTML = newSegment;
+        document.getElementById('alert54').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Count Digits
+        for (var i=0; i<string.length; i++) {
+            if (!string[i].match(/\D/g)) {
+                digits.push(parseInt(string[i]));
+                product *= parseInt(string[i]);
+            }
+        }
+        if (parseInt(string) < 0) {
+            product *= -1;
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Product: <strong>"' +
+        product + '"</strong>';
+        document.getElementById('alert54').innerHTML = newSegment;
+        document.getElementById('alert54').className = 'alert alert-success text-center';
     }
 }
