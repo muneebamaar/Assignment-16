@@ -1511,7 +1511,7 @@ function separateOddEvenElements() {
     var evenArray = [];
     var word = '';
     var newSegment = '<strong>Please Enter numerical separated by comma(,)!</strong>';
-    if (string=="" || string.match(/[^-, \D]/g)) {
+    if (string=="" || string.match(/[a-zA-z!@#$%^&*()_+=`~:;"'<.>?/|]/g)) {
         document.getElementById('alert39').innerHTML = newSegment;
         document.getElementById('alert39').className = 'alert alert-danger text-center';
     }
@@ -1544,5 +1544,339 @@ function separateOddEvenElements() {
         ']</strong><br> Even Array: <strong>[' + evenArray + ']</strong>';
         document.getElementById('alert39').innerHTML = newSegment;
         document.getElementById('alert39').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 40 - Search an element in the array
+function searchElementArray() {
+    var string = document.getElementById('seaElement').value;
+    var array = [];
+    var element = document.getElementById('searchElement').value;
+    var status = 0;
+    var statement = '';
+    var word = '';
+    var newSegment = '<strong>Please Enter the array separated by comma(,)!</strong>';
+    if (string=="" || element == "" || element.match(' ')) {
+        document.getElementById('alert40').innerHTML = newSegment;
+        document.getElementById('alert40').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            word = '';
+        }
+        // Search Loop
+        for (j=0; j<array.length; j++) {
+            if (array[j] == element) {
+                statement = statement + j + ', '
+                status = status + 1;
+            }
+        }
+        if (statement != '') {
+            statement = statement.slice (0, statement.length-2);
+        }
+
+        newSegment = 'Array: <strong>[' + array + ']</strong><br> Element: <strong>"' + element + 
+        '"</strong><br> Occured At: <strong>[' + statement + ']</strong><br> This element has occured <strong>"' +
+        status + '"</strong> times';
+        document.getElementById('alert40').innerHTML = newSegment;
+        document.getElementById('alert40').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 41 - Sort array elements in ascending or descending order
+function sortArray(order) {
+    var string = document.getElementById('sorArray').value;
+    var type = order;
+    var originalArray = [];
+    var array = [];
+    var word = '';
+    var newSegment = '<strong>Please Enter the numerical array separated by comma(,)!</strong>';
+    if (string=="" || string.match(/[a-zA-z!@#$%^&*()_+=`~:;"'<.>?/|]/g)) {
+        document.getElementById('alert41').innerHTML = newSegment;
+        document.getElementById('alert41').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(parseInt(word));
+                originalArray.push(parseInt(word));
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(parseInt(word));
+            originalArray.push(parseInt(word));
+            word = '';
+        }
+        
+        // Arranging Array
+        var temp;
+        if (type == 'dsc') {
+            for (var j=0; j<array.length; j++) {
+                for (var k=0; k<array.length; k++) {
+                    if (array[j] > array[k]) {
+                        temp = array[j];
+                        array[j] = array[k];
+                        array[k] = temp;
+                    }
+                }
+            }
+        } else {
+            for (var l=0; l<array.length; l++) {
+                for (var m=0; m<array.length; m++) {
+                    if (array[l] < array[m]) {
+                        temp = array[l];
+                        array[l] = array[m];
+                        array[m] = temp;
+                    }
+                }
+            }
+        }
+        
+
+        newSegment = 'Original Array: <strong>[' + originalArray + ']</strong><br> New Array: <strong>[' +
+        array + ']</strong>'
+        document.getElementById('alert41').innerHTML = newSegment;
+        document.getElementById('alert41').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 42 - Sort even and odd elements of array separately
+function sortOddEvenArray(order) {
+    var string = document.getElementById('sorOddEvenArray').value;
+    var type = order;
+    var array = [];
+    var originalArray = [];
+    var oddArray = [];
+    var evenArray = [];
+    var word = '';
+    var newSegment = '<strong>Please Enter numerical array separated by comma(,)!</strong>';
+    if (string=="" || string.match(/[a-zA-z!@#$%^&*()_+=`~:;"'<.>?/|]/g)) {
+        document.getElementById('alert42').innerHTML = newSegment;
+        document.getElementById('alert42').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(parseInt(word));
+                originalArray.push(parseInt(word));
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(parseInt(word));
+            originalArray.push(parseInt(word));
+            word = '';
+        }
+
+        // Arranging Array
+        var temp;
+        if (type == 'dsc') {
+            for (var j=0; j<array.length; j++) {
+                for (var k=0; k<array.length; k++) {
+                    if (array[j] > array[k]) {
+                        temp = array[j];
+                        array[j] = array[k];
+                        array[k] = temp;
+                    }
+                }
+            }
+        } else {
+            for (var l=0; l<array.length; l++) {
+                for (var m=0; m<array.length; m++) {
+                    if (array[l] < array[m]) {
+                        temp = array[l];
+                        array[l] = array[m];
+                        array[m] = temp;
+                    }
+                }
+            }
+        }
+
+        // Sepration of Odd and Even Elements in two Arrays
+         for (var j=0; j<array.length; j++) {
+            if (array[j]%2 == 0) {
+                evenArray.push(array[j]);
+            } else {
+                oddArray.push(array[j]);
+            }
+        }
+        
+
+        newSegment = 'Original Array: <strong>[' + originalArray + ']</strong><br> Arranged Array: <strong>[' + 
+        array + ']</strong><br> Even Array: <strong>[' + evenArray + ']</strong><br> Odd Array: <strong>[' + 
+        oddArray + ']</strong>';
+        document.getElementById('alert42').innerHTML = newSegment;
+        document.getElementById('alert42').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 43 - Left rotate an Array
+function leftRotateArray() {
+    var string = document.getElementById('lefRotateArray').value;
+    // var type = order;
+    var array = [];
+    var originalArray = [];
+    // var rotation = 1;
+    var word = '';
+    var newSegment = '<strong>Please Enter am array separated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert43').innerHTML = newSegment;
+        document.getElementById('alert43').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                originalArray.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            originalArray.push(word);
+            word = '';
+        }
+
+        // Left Rotate Array
+        var temp = array[0];
+        for (var j=0; j<array.length; j++) {
+            array[j] = array[j+1];
+        }
+        array[array.length-1] = temp;
+
+
+        newSegment = 'Original Array: <strong>[' + originalArray + ']</strong><br> Rotated Array: <strong>[' + 
+        array + ']</strong>';
+        document.getElementById('alert43').innerHTML = newSegment;
+        document.getElementById('alert43').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 44 - Right rotate an array
+function rightRotateArray() {
+    var string = document.getElementById('rigRotateArray').value;
+    // var type = order;
+    var array = [];
+    var originalArray = [];
+    // var rotation = 1;
+    var word = '';
+    var newSegment = '<strong>Please Enter an array eparated by comma(,)!</strong>';
+    if (string=="") {
+        document.getElementById('alert44').innerHTML = newSegment;
+        document.getElementById('alert44').className = 'alert alert-danger text-center';
+    }
+    else {
+        // Array
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+1) != ' ' && string.slice(i, i+1) != ','){
+                word = word + string.slice(i, i+1);
+            }
+            else if (word != ''){
+                array.push(word);
+                originalArray.push(word);
+                word = '';
+            }
+        }
+        if (word != '') {
+            array.push(word);
+            originalArray.push(word);
+            word = '';
+        }
+
+        // Left Rotate Array
+        var temp = array[array.length-1];
+        for (var j=array.length-1; j>=0; j--) {
+            array[j] = array[j-1];
+        }
+        array[0] = temp;
+
+
+        newSegment = 'Original Array: <strong>[' + originalArray + ']</strong><br> Rotated Array: <strong>[' + 
+        array + ']</strong>';
+        document.getElementById('alert44').innerHTML = newSegment;
+        document.getElementById('alert44').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 45 - Sum of all natural numbers between 1 to n
+function sumOfNaturalNumbers() {
+    var string = document.getElementById('sumNaturalNumbers').value.toString();
+    var sum = 0;
+    var newSegment = '<strong>Please Enter a Single Number!</strong>';
+    if (string=="" || string.match(/\D/g)) {
+        document.getElementById('alert45').innerHTML = newSegment;
+        document.getElementById('alert45').className = 'alert alert-danger text-center';
+    }
+    else {
+
+        // Sum Loop
+        string = parseInt(string);
+        for (var j=1; j<= string; j++) {
+            sum += j;
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Sum: <strong>"' + 
+        sum + '"</strong>';
+        document.getElementById('alert45').innerHTML = newSegment;
+        document.getElementById('alert45').className = 'alert alert-success text-center';
+    }
+}
+
+
+// Function # 46 - Sum of all even numbers between 1 to n
+function sumOfEvenNumbers() {
+    var string = document.getElementById('sumEvenNumbers').value.toString();
+    var sum = 0;
+    var newSegment = '<strong>Please Enter a Single Number!</strong>';
+    if (string=="" || string.match(/\D/g)) {
+        document.getElementById('alert46').innerHTML = newSegment;
+        document.getElementById('alert46').className = 'alert alert-danger text-center';
+    }
+    else {
+
+        // Sum Loop
+        string = parseInt(string);
+        for (var j=0; j<= string; j++) {
+            if (string%2 == 0) {
+                sum = sum + j;
+            }
+        }
+
+
+        newSegment = 'Entered Number: <strong>"' + string + '"</strong><br> Sum: <strong>"' + 
+        sum + '"</strong>';
+        document.getElementById('alert46').innerHTML = newSegment;
+        document.getElementById('alert46').className = 'alert alert-success text-center';
     }
 }
